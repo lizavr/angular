@@ -1,0 +1,7 @@
+div{
+  background-image: url(../../assets/unnamed.png);
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vh;
+  background-size: contain;
+}
