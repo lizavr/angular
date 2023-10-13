@@ -7,6 +7,7 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { HeaderComponent } from './header/header.component';
 import { ImgComponent } from './img/img.component';
+import { InputsComponent } from './inputs/inputs.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ImgComponent } from './img/img.component';
     ServerComponent,
     ServersComponent,
     HeaderComponent,
-    ImgComponent
+    ImgComponent,
+    InputsComponent
   ],
   imports: [
     BrowserModule,

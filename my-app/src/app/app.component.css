@@ -3,4 +3,5 @@ h3 {
 }
 .container {
   background-color: rgb(255 126 255);
+  margin: 10px auto;
 }
