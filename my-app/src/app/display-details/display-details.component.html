@@ -1,5 +1,7 @@
 <button class="btn btn-primary" (click)="btnVisibleClick()"> display details</button>
-<p *ngIf = "isVisible">secret</p>
-<p *ngFor="let click of arrClicks">{{click}}</p>
-
+<!-- <button class="btn btn-primary" (click)="isVisible = !isVisible"> display details</button> -->
+<p *ngIf="isVisible">secret</p>
+<!-- <p *ngFor="let click of arrClicks" [ngClass]="{backgroundFromFive: backgroundColor ==='yes'}">{{click}}</p> -->
+<!-- <p *ngFor="let click of arrClicks" [ngClass]="{backgroundFromFive: arrClicks.indexOf(click) > 4}">{{click}}</p> -->
+<p *ngFor="let click of arrClicks; let i = index" [ngClass]="{backgroundFromFive: i >= 4}">{{click}}</p>
 
