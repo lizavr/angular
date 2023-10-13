@@ -8,9 +8,13 @@
 <!-- <p> {{serverName}} </p> -->
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-
+<!--
 <p>{{allowNewServer}}</p>
-<p [innerText]="allowNewServer"></p>
-<p> {{serverCreationStatus}} </p>
+<p [innerText]="allowNewServer"></p> -->
+<!-- <p> {{serverCreationStatus}} </p> -->
+
+<p *ngIf="serverCreated">heeeeeeeeeeeeeey {{serverName}}</p>
+<!-- <p *ngIf="serverCreated; else noServer">heeeeeeeeeeeeeey {{serverName}}</p> -->
+<ng-template #noServer>Nooo</ng-template>
 <app-server></app-server>
 <app-server></app-server>
