@@ -8,6 +8,7 @@ import { ServersComponent } from './servers/servers.component';
 import { HeaderComponent } from './header/header.component';
 import { ImgComponent } from './img/img.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { DisplayDetailsComponent } from './display-details/display-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InputsComponent } from './inputs/inputs.component';
     ServersComponent,
     HeaderComponent,
     ImgComponent,
-    InputsComponent
+    InputsComponent,
+    DisplayDetailsComponent
   ],
   imports: [
     BrowserModule,
