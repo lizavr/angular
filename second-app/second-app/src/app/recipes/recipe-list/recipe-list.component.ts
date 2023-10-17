@@ -19,6 +19,9 @@ export class RecipeListComponent implements OnInit {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7LAEih9p--b4Jgwk-iXWC7AxpnJYf8TNVSQ&usqp=CAU'
     ),
   ];
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    throw new Error();
+  }
 }
