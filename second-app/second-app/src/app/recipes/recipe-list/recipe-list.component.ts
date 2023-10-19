@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -6,7 +6,8 @@ import { Recipe } from '../recipe.model';
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
 })
-export class RecipeListComponent implements OnInit {
+export class RecipeListComponent {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe(
       'a test recipe',
@@ -14,14 +15,15 @@ export class RecipeListComponent implements OnInit {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7LAEih9p--b4Jgwk-iXWC7AxpnJYf8TNVSQ&usqp=CAU'
     ),
     new Recipe(
-      'a test recipe',
+      'Second',
       'test test test',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7LAEih9p--b4Jgwk-iXWC7AxpnJYf8TNVSQ&usqp=CAU'
     ),
   ];
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
-  ngOnInit(): void {
-    throw new Error();
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
   }
 }

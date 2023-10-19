@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector:'app-header',
-  templateUrl:'./header.component.html'
+  selector: 'app-header',
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+  @Output() featureSelected = new EventEmitter<string>();
 
+  clickTab(feature) {
+      this.featureSelected.emit(feature);
+
+  }
 }
