@@ -10,6 +10,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { BasicDirective } from './basic/basic.directive';
+import { BetterBasicDirective } from './basic2/basicDir2.directive';
+import { UnlessDirective } from './unless/unless.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { BasicDirective } from './basic/basic.directive';
     ShoppingListComponent,
     ShoppingEditComponent,
     BasicDirective,
+    BetterBasicDirective,
+    UnlessDirective
   ],
   imports: [BrowserModule],
   providers: [],

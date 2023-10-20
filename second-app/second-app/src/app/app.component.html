@@ -7,4 +7,16 @@
     </div>
   </div>
   <div appBasicDir>Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+  <div [appBetterBasicDirective]="'green'" defaultColor="orange">jj</div>
+
+  <div *appUnless="false">
+    <li>appUnless</li>
+  </div>
+
+
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="1">1</p>
+    <p *ngSwitchCase="2">2</p>
+    <p *ngSwitchCase="3">3</p>
+  </div>
 </div>
