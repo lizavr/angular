@@ -12,6 +12,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { BasicDirective } from './basic/basic.directive';
 import { BetterBasicDirective } from './basic2/basicDir2.directive';
 import { UnlessDirective } from './unless/unless.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UnlessDirective } from './unless/unless.directive';
     ShoppingEditComponent,
     BasicDirective,
     BetterBasicDirective,
-    UnlessDirective
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [BrowserModule],
   providers: [],
