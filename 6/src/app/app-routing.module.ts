@@ -5,10 +5,11 @@ import { UserComponent } from './users/user/user.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './servers/server/server.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
-import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 const appRouters: Routes = [
   { path: '', component: HomeComponent },
@@ -23,11 +24,24 @@ const appRouters: Routes = [
     canActivateChild: [AuthGuard],
     component: ServersComponent,
     children: [
-      { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] },
+      {
+        path: ':id',
+        component: ServerComponent,
+        resolve: { server: ServerResolver },
+      },
+      {
+        path: ':id/edit',
+        component: EditServerComponent,
+        canDeactivate: [CanDeactivateGuard],
+      },
     ],
   },
-  { path: 'not-found', component: NotFoundComponentComponent },
+  // { path: 'not-found', component: NotFoundComponentComponent },
+  {
+    path: 'not-found',
+    component: ErrorPageComponent,
+    data: { message: 'Page not found' },
+  },
   { path: '**', redirectTo: '/not-found' },
 ];
 
